@@ -1,0 +1,17 @@
+>>> json_body = [
+    {
+        "measurement": "gpsEvents",
+        "tags": {
+            "user": "automousPI",
+            "brushId": "6969"
+        },
+        "time": "2018-03-28T8:01:00Z",
+        "fields": {
+            "fix_type":gps.fix_type,
+            "latitude": gps.latitude,
+            "longitude": gps.longitude,
+            "satellites_visible":gps.satellites_visible(),
+            "direction":gps.compass_direction(),
+        }
+    }
+]

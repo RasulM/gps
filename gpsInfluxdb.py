@@ -19,22 +19,27 @@ while 1:
     {
         "measurement": "gpsEvents",
         "tags": {
-            "user": "automousPI",
-            "brushId": "6969"
+            "user": "RESTPI",
+            "Id": "6b 65 74 74 65 72 69 6e 67 20 69 73 20 45 70 69 63 20 4f 77 4f"
         },
         "time": str('{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())),
         "fields": {
             "fix_type":str(gps.fix_type),
             "latitude": gps.latitude_string(),
+            "latitude_Minutes":float(gps.latitude[1]),
             "longitude": gps.longitude_string(),
-            "speed":str(gps.speed_string('kph')),
+            "longitude_Minutes":float(gps.longitude[1]),
+            "speed":float(gps.speed[2]),
             "direction":str(gps.compass_direction())
+            
         }
     }
 ]
 
     print(json_body)
-    client.write_points(json_body)
-    time.sleep(1)
+# uncomment line below to log
+   # client.write_points(json_body)
+    
+
 
 
